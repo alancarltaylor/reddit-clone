@@ -1,0 +1,16 @@
+{
+  "name": "redditClone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "superstatic",
+    "watch": "watchify app.js -o bundle.js -v"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.13.0"
+  }
+}
