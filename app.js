@@ -4,11 +4,26 @@ var app = angular.module("redditClone", []);
 app.controller("Posts", ["$scope", function($scope){
   $scope.view = {};
   $scope.view.score = 0;
+  $scope.newPost = {};
   // $scope.view.createPost = true;
 
   $scope.view.showPostForm = function(){
     console.log('in showForm n stuff');
     $scope.view.createPost = !$scope.view.createPost;
+  }
+
+  $scope.addPost = function(newPost){
+    
+    newPost.dateAdded = moment().calendar();
+    newPost.comments = ['comment'];
+    newPost.id = $scope.posts.length;
+    newPost.score = 0;
+    $scope.posts.push(newPost);
+    console.log(newPost);
+    console.log($scope.posts);
+    $scope.newPost = {};
+    $scope.view.createPost = false;
+
   }
 
   $scope.posts = [
@@ -42,6 +57,16 @@ app.controller("Posts", ["$scope", function($scope){
       score: 0,
       comments: []
     },
+    {
+      id: 3,
+      dateAdded: moment().calendar(),
+      title: "Mountain stuff",
+      author: "Alan",
+      image: "http://www.daviddarling.info/images/mountain.jpg",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      score: 0,
+      comments: []
+    }
   ];
   $scope.view.sorter = "score";
   $scope.sortBy = function(sorter) {

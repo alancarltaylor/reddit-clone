@@ -4,6 +4,7 @@ div.post {
   margin: auto;
   margin: 2% 2%;
   padding: 2% 2% 3% 2%;
+  min-height: 280px;
 }
 
 img.post {
@@ -24,3 +25,11 @@ p.author {
 .negative {
   color: red;
 }
+
+.css-form input.ng-invalid.ng-touched {
+    background-color: #FA787E;
+  }
+
+  .css-form input.ng-valid.ng-touched {
+    background-color: #78FA89;
+  }
