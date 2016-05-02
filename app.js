@@ -1,7 +1,7 @@
 var moment = require('moment');
 var app = angular.module("redditClone", []);
 
-app.controller("Posts", ["$scope", function($scope){
+app.controller("MainController", ["$scope", function($scope){
   $scope.view = {};
   $scope.view.score = 0;
   $scope.newPost = {};
